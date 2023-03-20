@@ -1,0 +1,9 @@
+create table grocery (id integer primary key, name text, price integer, quantity integer, aisle integer);
+
+insert into grocery values (1, "Bread",2.00, 50, 4);
+insert into grocery values (2, "Milk", 3.00, 30, 2);
+insert into grocery values (3, "Flour",2.50, 35, 5);
+insert into grocery values (4, "Tomatoes", .50, 55, 9);
+insert into grocery values (5, "Eggs",5.00, 100, 3);
+
+select * from grocery order by aisle;
