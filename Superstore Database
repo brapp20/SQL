@@ -26,16 +26,16 @@ VALUES
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
 
 
-#Ordering items by price.
+#Use a SELECT statement to order the items by price.
 SELECT item_name, price
 FROM superstore
 ORDER BY price desc;
 
-#Averaging item prices.
+#Show a statistic about the item prices.
 SELECT avg(price)
 FROM superstore;
 
-#Averaging prices for items in "Kitchen Supplies". 
+#Show a statistic about the price for items in the category of "Appliances". 
 SELECT avg(price)
 FROM superstore
-WHERE category="Kitchen Supplies"
+WHERE category="Appliances"
