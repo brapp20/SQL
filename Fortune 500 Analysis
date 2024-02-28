@@ -57,3 +57,18 @@ VALUES
     ('Company II', 'Telecommunications', 110.5, 2000, 1, 21, 12, 4.9),
     ('Company JJ', 'Manufacturing', 370.0, 3100, 1, 20, 12, 7.6),
     ('Company KK', 'Healthcare', 150.2, 3400, 0, 16, 8, 5.3);
+
+
+
+#Categorize the companies into Low, Medium and High Revenue based on revenue values, ordering based on who has the highest revenue.
+SELECT
+    company_name,
+    revenue,
+    CASE
+        WHEN revenue < 200 THEN 'Low Revenue'
+        WHEN revenue >= 200 AND revenue < 400 THEN 'Medium Revenue'
+        ELSE 'High Revenue'
+    END AS revenue_category
+FROM
+    fortune_companies
+    ORDER BY revenue DESC;
