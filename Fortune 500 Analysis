@@ -61,14 +61,16 @@ VALUES
 
 
 #Categorize the companies into Low, Medium and High Revenue based on revenue values, ordering based on who has the highest revenue.
-SELECT
-    company_name,
-    revenue,
-    CASE
-        WHEN revenue < 200 THEN 'Low Revenue'
-        WHEN revenue >= 200 AND revenue < 400 THEN 'Medium Revenue'
-        ELSE 'High Revenue'
-    END AS revenue_category
-FROM
-    fortune_companies
-    ORDER BY revenue DESC;
+SELECT company_name,revenue,
+CASE WHEN revenue < 200 THEN 'Low Revenue'
+WHEN revenue >= 200 AND revenue < 400 THEN 'Medium Revenue'
+ELSE 'High Revenue'
+END AS revenue_category
+FROM fortune_companies
+ORDER BY revenue DESC;
+
+#select industries where the average revenue across all companies within that industry is greater than 300
+SELECT industry,AVG(revenue) AS avg_revenue
+FROM fortune_companies
+GROUP BY industry
+HAVING AVG(revenue) > 300;
