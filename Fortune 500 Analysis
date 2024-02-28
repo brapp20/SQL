@@ -69,8 +69,16 @@ END AS revenue_category
 FROM fortune_companies
 ORDER BY revenue DESC;
 
-#select industries where the average revenue across all companies within that industry is greater than 300
+#Select industries where the average revenue across all companies within that industry is greater than 300
 SELECT industry,AVG(revenue) AS avg_revenue
 FROM fortune_companies
 GROUP BY industry
 HAVING AVG(revenue) > 300;
+
+#Select companies from the 'Technology' or 'Finance' industries with revenue greater than 300 AND more than 2000 employees
+SELECT company_name, industry, revenue, employees
+FROM fortune_companies
+WHERE (industry = 'Technology' 
+OR industry = 'Finance')
+AND revenue > 300
+AND employees > 2000;
