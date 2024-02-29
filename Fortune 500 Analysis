@@ -82,3 +82,7 @@ WHERE (industry = 'Technology'
 OR industry = 'Finance')
 AND revenue > 300
 AND employees > 2000;
+
+#Average revenue across all companies
+SELECT AVG(revenue) AS avg_revenue_per_company 
+FROM fortune_companies;
